@@ -4,7 +4,7 @@ def get_data():
     df_value = pd.read_csv("../Files/clean_value_df.csv")
     df_census = pd.read_csv("../Files/final_census_df.csv")
     df_readmission = pd.read_csv("../Files/readmissions_df.csv")
-    return df_value.head(50), df_census.head(50), df_readmission.head(50)
+    return df_value, df_census, df_readmission
 
 
 def merge_data(df_value, df_census, df_readmission):

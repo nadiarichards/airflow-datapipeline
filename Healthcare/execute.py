@@ -1,1 +1,1 @@
-from Healthcare.data_retrieval import get_data
+import get_data()

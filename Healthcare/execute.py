@@ -6,6 +6,7 @@ df_value, df_census, df_readmission = get_data()
 
 merged_df, census_merged_df=merge_data(df_value, df_census, df_readmission)
 # print(merged_df[:5], census_merged_df[:5])
+print(census_merged_df.head())
 
 avg_code_readmission, avg_facility_readmission, updated_census_df=aggregate_data(merged_df, census_merged_df)
-print(avg_code_readmission.head(), avg_facility_readmission.head(), updated_census_df.head())
+# print(avg_code_readmission.head(), avg_facility_readmission.head(), updated_census_df.head())

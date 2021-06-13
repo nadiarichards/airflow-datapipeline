@@ -8,5 +8,5 @@ def get_data():
     return df_value.head(50), df_census.head(50), df_readmission.head(50), df_zipcode.head(50)
 
 # print(get_data())
-df_value, df_census, df_readmission, df_zipcode = get_data()
-print(df_value[:5], df_census[:5], df_readmission[:5], df_zipcode[:5])
+# df_value, df_census, df_readmission, df_zipcode = get_data()
+# print(df_value[:5], df_census[:5], df_readmission[:5], df_zipcode[:5])

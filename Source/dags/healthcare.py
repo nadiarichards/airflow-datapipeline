@@ -17,3 +17,25 @@ default_args = {
 
 DAG_VERSION= 'Healthcare.0'
 
+dag = DAG(DAG_VERSION
+    , default_args=default_args
+    , schedule_interval=SCHEDULE_INTERVAL
+    , concurrency=1
+    , max_active_runs=1)
+
+get_data = PythonOperator(
+    task_id='get_data',
+    python_callable=core_get_data,
+    retries=0,
+    provide_context=True,
+    dag=dag
+)
+
+aggregation = PythonOperator(
+    task_id='aggregate_data',
+    python_callable=core_aggregate_data,
+    retries=0,
+    provide_context=True,
+    dag=dag
+)
+

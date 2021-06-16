@@ -24,4 +24,6 @@ def core_insert_to_db(**kwargs):
     avg_code_readmission=task_instance.xcom_pull(key='avg_code_readmission', task_ids='aggregate_data')
     avg_facility_readmission=task_instance.xcom_pull(key='avg_facility_readmission', task_ids='aggregate_data')
     updated_census_df=task_instance.xcom_pull(key='updated_census_df', task_ids='aggregate_data')
-    insert_to_db(engine,df)
+    insert_to_db(engine, avg_code_readmission, 'avg_readmissions')
+    insert_to_db(engine, avg_facility_readmission, 'avg_valuecode_readmissions')
+    insert_to_db(engine, updated_census_df, 'hospitals_census')

@@ -39,3 +39,12 @@ aggregate_data = PythonOperator(
     dag=dag
 )
 
+insert_to_db = PythonOperator(
+    task_id='insert_to_db',
+    python_callable=core_insert_to_db
+    retries=0,
+    provide_context=True,
+    dag=dag
+)
+
+get_data >> aggregate_data >> insert_to_db

@@ -31,7 +31,7 @@ get_data = PythonOperator(
     dag=dag
 )
 
-aggregation = PythonOperator(
+aggregate_data = PythonOperator(
     task_id='aggregate_data',
     python_callable=core_aggregate_data,
     retries=0,

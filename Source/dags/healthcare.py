@@ -6,7 +6,7 @@ from airflow.operators.python_operator import PythonOperator
 SCHEDULE_INTERVAL = None
 
 default_args = {
-    'owner': 'business intelligence',
+    'owner': 'Business Intelligence',
     'depends_on_past': False,
     'start_date': datetime (2021, 6, 1),
     'email_on_failure': True,
@@ -15,7 +15,7 @@ default_args = {
     'retry_delay': timedelta(minutes=5)
 }
 
-DAG_VERSION= 'Healthcare.0'
+DAG_VERSION = 'Healthcare.0'
 
 dag = DAG(DAG_VERSION
     , default_args=default_args
